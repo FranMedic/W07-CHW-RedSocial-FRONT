@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+
 import useUser from "../../hooks/useUser";
 
 const LoginForm = () => {
   const { login } = useUser();
-  let navigate = useNavigate();
+  //let navigate = useNavigate();
   const initalValues = {
     username: "",
     password: "",
@@ -13,21 +13,16 @@ const LoginForm = () => {
 
   const [userData, setUserData] = useState(initalValues);
   const [isDisabled, setIsDisabled] = useState(true);
-  const [wrongCredentials, setWrongCredentials] = useState(false);
+  //const [wrongCredentials, setWrongCredentials] = useState(false);
 
   const onChangeData = (event) => {
     setUserData({ ...userData, [event.target.id]: event.target.value });
   };
 
   const onLogin = async (event) => {
-    setWrongCredentials(false);
     event.preventDefault();
-    const response = await login(userData);
-    if (!response) {
-      navigate("/");
-    } else {
-      setWrongCredentials(true);
-    }
+    login(userData);
+
     setUserData(initalValues);
   };
 
@@ -83,12 +78,12 @@ const LoginForm = () => {
               >
                 Login
               </button>
-              <Link to="/signup">
-                <button className="register-button">
-                  Don't have an account? Sign up!
-                </button>
-              </Link>
             </form>
+            <Link to="/signup">
+              <button className="register-button btn btn-primary mt-1 mb-5">
+                Don't have an account? Sign up!
+              </button>
+            </Link>
           </div>
         </section>
       </div>

@@ -1,5 +1,5 @@
-import { Route, Router, Routes } from "react-router";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+
 import "./App.css";
 import useUser from "./hooks/useUser";
 import HomePage from "./pages/HomePage/HomePage";
@@ -13,6 +13,7 @@ function App() {
     logout();
     localStorage.removeItem(process.env.REACT_APP_LOCAL_STORAGE);
   };
+
   return (
     <>
       <Router>
