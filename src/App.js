@@ -4,6 +4,7 @@ import "./App.css";
 import useUser from "./hooks/useUser";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginForm from "./pages/LoginForm/LoginForm";
+import RegisterForm from "./pages/RegisterForm/RegisterForm";
 
 function App() {
   const { user, logout } = useUser();
@@ -40,6 +41,7 @@ function App() {
             element={user.isAuthenticated ? <HomePage /> : <LoginForm />}
           />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/signup" element={<RegisterForm />} />
         </Routes>
       </Router>
     </>
