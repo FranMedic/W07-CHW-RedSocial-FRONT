@@ -7,7 +7,7 @@ const userReducer = (user = { isAuthenticated: false, user: {} }, action) => {
     case actionTypes.userLogin:
       newUser = {
         isAuthenticated: true,
-        user: {},
+        user: user,
       };
       break;
     case actionTypes.userLogout:
