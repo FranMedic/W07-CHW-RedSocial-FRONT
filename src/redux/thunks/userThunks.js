@@ -7,7 +7,9 @@ const urlApi = "https://red-social-api.herokuapp.com/";
 const userLocal = process.env.REACT_APP_LOCAL_STORAGE;
 
 export const userLoginThunk = (user) => async (dispatch) => {
-  const response = await axios.post(urlApi + "/login", user);
+  const response = await axios.post(urlApi + "users/login", user, {
+    mode: "cors",
+  });
   if (response.status === 200) {
     const token = response.data.token;
     const user = jwtDecode(token);
