@@ -1,5 +1,5 @@
 import { userLoginAction, userLogoutAction } from "../actions/actionCreators";
-import actionTypes from "../actions/actionTypes";
+
 import userReducer from "./userReducer";
 
 describe("Given a userReducer reducer", () => {
