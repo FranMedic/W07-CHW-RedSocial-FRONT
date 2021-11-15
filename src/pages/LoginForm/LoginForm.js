@@ -5,7 +5,7 @@ import useUser from "../../hooks/useUser";
 
 const LoginForm = () => {
   const { login } = useUser();
-  //let navigate = useNavigate();
+
   const initalValues = {
     username: "",
     password: "",
@@ -13,7 +13,6 @@ const LoginForm = () => {
 
   const [userData, setUserData] = useState(initalValues);
   const [isDisabled, setIsDisabled] = useState(true);
-  //const [wrongCredentials, setWrongCredentials] = useState(false);
 
   const onChangeData = (event) => {
     setUserData({ ...userData, [event.target.id]: event.target.value });
