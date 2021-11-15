@@ -5,7 +5,7 @@ const userListReducer = (userList = [], action) => {
 
   switch (action.type) {
     case actionTypes.loadUsers:
-      newUserList = [...userList];
+      newUserList = [...action.users];
       break;
     case actionTypes.userRegister:
       newUserList = [...userList, action.user];
