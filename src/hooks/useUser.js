@@ -4,7 +4,7 @@ const { userLogoutAction } = require("../redux/actions/actionCreators");
 const { userLoginThunk } = require("../redux/thunks/userThunks");
 
 const useUser = () => {
-  const user = useSelector((store) => store.user);
+  const { user } = useSelector((store) => store.user);
   const dispatch = useDispatch();
 
   const login = (user) => {
