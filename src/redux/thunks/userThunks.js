@@ -2,7 +2,7 @@ import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { userLoginAction } from "../actions/actionCreators";
 
-const urlApi = "https://red-social-api.herokuapp.com/";
+const urlApi = process.env.REACT_APP_API_URL;
 
 const userLocal = process.env.REACT_APP_LOCAL_STORAGE;
 
